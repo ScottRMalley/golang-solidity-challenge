@@ -53,9 +53,14 @@ interface WinToken {
 }
 
 interface AirVault {
+	// lock tokens in the AirVault contract
 	deposit(uint256 amount) public returns(bool);
+
+	// withdraw deposited tokens
 	withdraw(uint256 amount) public returns(bool);
-	balanceOf(address account) external view returns(uint256);
+	
+	// provides how many tokens a specific address has deposited
+	lockedBalanceOf(address account) external view returns(uint256);
 }
 ```
 
